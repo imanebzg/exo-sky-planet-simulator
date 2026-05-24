@@ -28,7 +28,6 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(me
 log = logging.getLogger(__name__)
 
 # ── Feature columns chosen from the KOI table ────────────────────────────────
-# no post-hoc labels required so they ar valid prediction features.
 FEATURE_COLS = [
     "koi_period",        # Orbital period (days)
     "koi_time0bk",       # Time of first transit (BJD)
@@ -124,7 +123,6 @@ def train(X, y, le):
     )
     clf.fit(X_train, y_train)
 
-    # Evaluation
     y_pred = clf.predict(X_test)
     log.info("\n" + classification_report(y_test, y_pred, target_names=le.classes_))
 

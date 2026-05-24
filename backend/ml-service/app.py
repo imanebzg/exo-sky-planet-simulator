@@ -31,7 +31,6 @@ log = logging.getLogger(__name__)
 
 app = Flask(__name__)
 
-# ── Model state (loaded once at startup) ─────────────────────────────────────
 _model_state = {"clf": None, "le": None, "imputer": None, "ready": False, "error": None}
 
 FEATURE_DESCRIPTIONS = {
@@ -68,7 +67,6 @@ def _load():
         log.error(f"Model failed to load: {e}")
 
 
-# Load model on a background thread so the server starts immediately
 threading.Thread(target=_load, daemon=True).start()
 
 
@@ -192,7 +190,6 @@ def retrain():
     return jsonify({"message": "Retraining started in the background. Poll /health to check status."})
 
 
-# ── Entry point ───────────────────────────────────────────────────────────────
 
 if __name__ == "__main__":
     port = int(os.environ.get("ML_PORT", 5001))
