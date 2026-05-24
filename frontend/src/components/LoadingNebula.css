@@ -1,0 +1,64 @@
+.loading-nebula {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  gap: 1.5rem;
+}
+
+.nebula-rings {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  animation: spin linear infinite;
+}
+
+.ring-1 {
+  width: 100px; height: 100px;
+  border-top-color: var(--cyan-glow);
+  border-right-color: rgba(0,229,255,0.3);
+  animation-duration: 1.2s;
+}
+.ring-2 {
+  width: 70px; height: 70px;
+  border-bottom-color: var(--gold-planet);
+  border-left-color: rgba(255,209,102,0.3);
+  animation-duration: 1.8s;
+  animation-direction: reverse;
+}
+.ring-3 {
+  width: 42px; height: 42px;
+  border-top-color: var(--green-life);
+  animation-duration: 0.9s;
+}
+
+.planet-core {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--cyan-glow), var(--teal-glow));
+  box-shadow: 0 0 15px var(--cyan-glow);
+  animation: pulseGlow 2s ease-in-out infinite;
+  color: var(--cyan-glow);
+}
+
+.loading-message {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.loading-sub {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+}

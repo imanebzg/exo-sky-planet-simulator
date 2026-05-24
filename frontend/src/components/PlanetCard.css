@@ -1,0 +1,150 @@
+.planet-card-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(4, 8, 18, 0.75);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 0.2s ease;
+  padding: 1rem;
+}
+
+.planet-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(10, 22, 40, 0.98), rgba(15, 32, 64, 0.98));
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  max-width: 540px;
+  width: 100%;
+  box-shadow: 0 0 60px rgba(0, 229, 255, 0.1), 0 30px 80px rgba(0,0,0,0.5);
+  animation: slideUp 0.3s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.card-close {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+.card-close:hover {
+  background: rgba(255, 107, 107, 0.2);
+  color: var(--coral-hot);
+  border-color: var(--coral-hot);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+}
+
+.card-planet-viz {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.card-planet-orb {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.4), var(--planet-hue, var(--teal-glow)));
+  box-shadow: 0 0 30px var(--planet-hue, var(--teal-glow)), inset -8px -8px 20px rgba(0,0,0,0.5);
+  animation: float 4s ease-in-out infinite;
+}
+
+.card-planet-ring {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%) rotateX(75deg);
+  width: 100px; height: 100px;
+  border-radius: 50%;
+  border: 3px solid rgba(0, 229, 255, 0.25);
+  pointer-events: none;
+}
+
+.card-name {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--star-white);
+  text-shadow: 0 0 20px rgba(0,229,255,0.3);
+  line-height: 1.2;
+}
+
+.card-host {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+.card-host span {
+  color: var(--gold-planet);
+  font-weight: 600;
+}
+
+.card-method {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  font-family: var(--font-mono);
+}
+
+.card-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.stat-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+}
+
+.stat-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+.stat-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  margin-top: 2px;
+}
+
+.card-fun-fact {
+  background: rgba(0, 229, 255, 0.06);
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 1rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+.card-fun-fact span {
+  color: var(--cyan-glow);
+  font-weight: 700;
+}

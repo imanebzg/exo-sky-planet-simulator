@@ -1,0 +1,122 @@
+.habitable-page { position: relative; min-height: 100vh; }
+
+.habitable-inner {
+  position: relative; z-index: 10;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 2rem 4rem;
+}
+
+.habitable-header { text-align: center; margin-bottom: 3rem; }
+
+.habitable-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--green-life);
+  background: rgba(6, 214, 160, 0.08);
+  border: 1px solid rgba(6, 214, 160, 0.25);
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.habitable-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--star-white);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.habitable-title span { color: var(--green-life); text-shadow: 0 0 30px rgba(6,214,160,0.5); }
+
+.habitable-sub {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.sort-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.sort-label { font-size: 0.8rem; color: var(--text-muted); margin-right: 4px; }
+.sort-btn {
+  font-size: 0.8rem;
+  font-family: var(--font-body);
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-secondary);
+  background: rgba(10,22,40,0.7);
+  transition: all 0.2s;
+}
+.sort-btn:hover { border-color: rgba(6,214,160,0.3); color: var(--green-life); }
+.sort-btn.active { background: rgba(6,214,160,0.1); border-color: rgba(6,214,160,0.4); color: var(--green-life); }
+.result-count { margin-left: auto; font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); }
+
+.habitable-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.hab-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: rgba(10, 22, 40, 0.7);
+  border: 1px solid rgba(6, 214, 160, 0.1);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  cursor: pointer;
+  transition: all 0.25s;
+  backdrop-filter: blur(10px);
+}
+.hab-card:hover {
+  border-color: rgba(6, 214, 160, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px rgba(6, 214, 160, 0.1);
+}
+
+.hab-planet-orb {
+  width: 52px; height: 52px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: float 4s ease-in-out infinite;
+}
+
+.hab-content { flex: 1; min-width: 0; }
+.hab-name { font-family: var(--font-display); font-size: 1rem; color: var(--star-white); margin-bottom: 2px; }
+.hab-host { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+
+.hab-pills { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+.hab-pill {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  padding: 3px 8px;
+  border-radius: 8px;
+}
+
+.life-score-wrap { display: flex; flex-direction: column; gap: 4px; }
+.life-score-label { display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--text-muted); }
+.life-score-label strong { color: var(--green-life); }
+.life-score-bar { height: 4px; background: rgba(255,255,255,0.07); border-radius: 2px; overflow: hidden; }
+.life-score-fill { height: 100%; border-radius: 2px; transition: width 0.6s ease; }
+
+.error-msg {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
